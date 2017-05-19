@@ -22,7 +22,9 @@
 
 {% block content_primary_nav %}
   {{ h.build_nav_icon('resource_edit', _('Edit resource'), id=pkg.name, resource_id=res.id) }}
-  {% if res.format == "CSV" %}{{ h.build_nav_icon('resource_csv', _('CSV metadata'), id=pkg.name, resource_id=res.id) }}$
+  {% if res.format == "CSV" %}
+    {{ h.build_nav_icon('resource_csv', _('CSV metadata'), id=pkg.name, resource_id=res.id) }}
+  {% endif %}
   {% if 'datapusher' in g.plugins %}
     {{ h.build_nav_icon('resource_data', _('DataStore'), id=pkg.name, resource_id=res.id) }}
   {% endif %}
