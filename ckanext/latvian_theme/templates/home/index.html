@@ -1,0 +1,17 @@
+{% extends "package/search.html" %}
+{% set homepage_style = ( g.homepage_style or '1' ) %}
+
+{% block subtitle %}{{ _("Welcome") }}{% endblock %}
+
+{% block maintag %}{% endblock %}
+{% block toolbar %}{% endblock %}
+
+{% block content %}
+ <section class="module">
+    <div class="module-content">
+    </div>
+</section>
+<script>
+    location='/dati/lv/dataset';
+</script>
+{% endblock %}

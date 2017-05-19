@@ -1,0 +1,341 @@
+{% set current_lang = request.environ.CKAN_LANG %}
+{% set current_url = request.environ.CKAN_CURRENT_URL %}
+<div class="topbar">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-2 col-xs-4">
+  <div class="region region-langswitch">
+
+<section class="language-switcher-language-url block block-language block-language-blocklanguage-interface clearfix" id="block-dati-languageswitcher" role="navigation">
+<ul class="links">
+  <li hreflang="en" data-drupal-link-system-path="&lt;front&gt;" class="en {% if current_lang == 'en' %}is-active{% endif %}">
+    <a href="{% url_for current_url, locale='en' %}" class="language-link {% if current_lang == 'en' %}is-active{% endif %}" hreflang="en" data-drupal-link-system-path="&lt;front&gt;">English</a>
+  </li>
+  <li hreflang="lv" data-drupal-link-system-path="&lt;front&gt;" class="lv {% if current_lang == 'lv' %}is-active{% endif %}">
+    <a href="{% url_for current_url, locale='lv' %}" class="language-link {% if current_lang == 'lv' %}is-active{% endif %}" hreflang="lv" data-drupal-link-system-path="&lt;front&gt;">Latviešu</a>
+  </li>
+</ul>
+  </section>
+  </div>
+</div>
+    <div class="col-md-2 accessibility hidden-xs">
+      <div class="contrast">
+        <i class="material-icons mi-left">brightness_6</i>
+       {% if current_lang == 'en' %} high contrast {% else %} augsts kontrasts {% endif %}
+      </div>
+    </div>
+    <div class="col-md-2 accessibility  hidden-xs">
+      <div class="textsize">
+        <i class="material-icons text_smaller mi-left">remove_circle_outline</i>
+               {% if current_lang == 'en' %} text {% else %} teksts {% endif %}
+        <i class="material-icons text_larger  mi-right">add_circle_outline</i>
+      </div>
+    </div>
+    <div class="col-md-6  col-xs-8">
+      <div class="pull-right account-wrapper">
+{% block header_account %}
+    <!-- auth_marker -->
+      {% block header_account_container_content %}
+        {% if c.userobj %}
+          <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
+            <ul class="unstyled">
+              {% block header_account_logged %}
+              {% if c.userobj.sysadmin %}
+                <li>
+                  <a href="{{ h.url_for(controller='admin', action='index') }}" title="{{ _('Sysadmin settings') }}">
+                    <i class="fa fa-legal" aria-hidden="true"></i>
+                  </a>
+                </li>
+              {% endif %}
+              <li>
+                <a href="{{ h.url_for(controller='user', action='read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
+                  {{ h.gravatar((c.userobj.email_hash if c and c.userobj else ''), size=22) }}
+                </a>
+              </li>
+              {% set new_activities = h.new_activities() %}
+              <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
+                {% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
+                <a href="{{ h.url_for(controller='user', action='dashboard') }}" title="{{ notifications_tooltip }}">
+                  <i class="fa fa-dashboard" aria-hidden="true"></i>
+                  <span class="text">{{ _('Dashboard') }}</span>
+                  <span class="badge">{{ new_activities }}</span>
+                </a>
+              </li>
+              {% block header_account_settings_link %}
+                <li>
+                  <a href="{{ h.url_for(controller='user', action='edit', id=c.userobj.name) }}" title="{{ _('Edit settings') }}">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                    <span class="text">{{ _('Settings') }}</span>
+                  </a>
+                </li>
+              {% endblock %}
+              {% block header_account_log_out_link %}
+                <li>
+                  <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                  </a>
+                </li>
+              {% endblock %}
+              {% endblock %}
+            </ul>
+          </div>
+        {% else %}
+          <nav class="account not-authed">
+            <ul class="unstyled">
+              {% block header_account_notlogged %}
+              {% if h.check_access('user_create') %}
+              <li><a class="sub" href="/dati/{{current_lang}}/user/register"><i class="material-icons color-nice-blue">vpn_lock</i> {{ _('Register') }}</a></li>
+              {% endif %}
+              <li><a href="/dati/{{current_lang}}/user/login"> <i class="material-icons color-nice-blue">vpn_key</i> {{ _('Log in') }}</a></li>
+              {% endblock %}
+            </ul>
+          </nav>
+        {% endif %}
+      {% endblock %}
+    <!-- auth_marker -->
+{% endblock %}
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+{% if current_lang=='lv' %}
+<div class="mainmenu">
+  <div class="container">
+    <div class="col-md-3 slogo">
+     <div class="col-sm-12" role="heading">
+      <div class="region region-header">
+        <a class="logo navbar-btn pull-left" href="/lv" title="Sākums" rel="home">
+          <img src="/themes/dati/logo.svg" alt="Sākums" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-2 visible-xs pull-right">
+    <div class="" data-toggle="collapse" data-target="#navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="material-icons" style="font-size: 48px;  color: #333333; text-align: right;">dehaze</span>
+    </div>
+  </div>
+  <div class="col-md-9 hidden-xs">
+    <header class="navbar navbar-custom container" id="navbar" role="banner">
+      <div class="navbar-header">
+        <div class="region region-navigation">
+          <nav role="navigation" aria-labelledby="block-dati-mainnavigation-menu" id="block-dati-mainnavigation">
+            <h2 class="sr-only" id="block-dati-mainnavigation-menu">Main navigation</h2>
+            <ul class="menu nav navbar-nav">
+              <li  class="active">
+                <a href="/dati/lv/dataset" target="" rel="" class="fa fa-database">Datu katalogs</a>
+              </li>
+              <li>
+                <a href="/lv/kas-ir-datu-kopa" target="" rel="" data-drupal-link-system-path="node/17">Apgūsti datu prasmes</a>
+              </li>
+              <li>
+                <a href="/lv/publicetajiem" data-drupal-link-system-path="node/4">Publicētājiem</a>
+              </li>
+              <li>
+                <a href="/lv/buj" target="" rel="" data-drupal-link-system-path="buj">Jautājumi un atbildes</a>
+              </li>
+              <li>
+                <a href="/lv/aktualitates" target="" rel="" class="menu2" data-drupal-link-system-path="aktualitates">Aktualitātes</a>
+              </li>
+              <li>
+                <a href="/lv/par-portalu" target="" rel="" class="menu2" data-drupal-link-system-path="node/5">Par portālu</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+</div>
+<div class="container">
+  <div class="visible-xs">
+    <div id="navbar-collapse" class="navbar-collapse collapse">
+      <div class="region region-navigation">
+        <nav role="navigation" aria-labelledby="block-dati-mainnavigation--2-menu" id="block-dati-mainnavigation--2">
+          <h2 class="sr-only" id="block-dati-mainnavigation--2-menu">Main navigation</h2>
+          <ul class="menu nav navbar-nav">
+            <li>
+              <a href="/dati/lv/dataset" target="" rel="" class="fa fa-database">Datu katalogs</a>
+            </li>
+            <li>
+              <a href="/lv/kas-ir-datu-kopa" target="" rel="" data-drupal-link-system-path="node/17">Apgūsti datu prasmes</a>
+            </li>
+            <li>
+              <a href="/lv/publicetajiem" data-drupal-link-system-path="node/4">Publicētājiem</a>
+            </li>
+            <li>
+              <a href="/lv/buj" target="" rel="" data-drupal-link-system-path="buj">Jautājumi un atbildes</a>
+            </li>
+            <li>
+              <a href="/lv/aktualitates" target="" rel="" class="menu2" data-drupal-link-system-path="aktualitates">Aktualitātes</a>
+            </li>
+            <li>
+              <a href="/lv/par-portalu" target="" rel="" class="menu2" data-drupal-link-system-path="node/5">Par portālu</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="searchbar">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-8 col-xs-12">
+      <form action="/dati/lv/dataset" method="get" accept-charset="UTF-8" class="data-search-form">
+        <div class="row">
+          <div class="col-sm-8 col-xs-8">
+            <div class="input-group">
+              <input name="q" type="text" class="form-control" placeholder="Ievadiet terminus, kurus meklēt." aria-describedby="basic-addon1">
+              <span class="input-group-addon addon-blue" id="basic-addon1"><i class="material-icons">search</i></span>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-4">
+            <button type="submit" value="Meklēt" class="btn-transparent2">Meklēt</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-4 hidden-xs">
+      <div class="region region-menu2">
+        <nav role="navigation" aria-labelledby="block-galvenanavigacija-2-menu" id="block-galvenanavigacija-2">
+          <h2 class="sr-only" id="block-galvenanavigacija-2-menu">Galvenā navigācija</h2>
+          <ul class="menu nav navbar-nav">
+            <li class="active">
+              <a href="/dati/lv/dataset" target="" rel="" class="fa fa-database">Datu katalogs</a>
+            </li>
+            <li>
+              <a href="/dati/en/dataset" target="" rel="" class="fa fa-database">Data</a>
+            </li>
+            <li>
+              <a href="/lv/kas-ir-datu-kopa" target="" rel="" data-drupal-link-system-path="node/17">Apgūsti datu prasmes</a>
+            </li>
+            <li>
+              <a href="/lv/publicetajiem" data-drupal-link-system-path="node/4">Publicētājiem</a>
+            </li>
+            <li>
+              <a href="/lv/buj" target="" rel="" data-drupal-link-system-path="buj">Jautājumi un atbildes</a>
+            </li>
+            <li>
+              <a href="/lv/aktualitates" target="" rel="" class="menu2" data-drupal-link-system-path="aktualitates">Aktualitātes</a>
+            </li>
+            <li>
+              <a href="/lv/par-portalu" target="" rel="" class="menu2" data-drupal-link-system-path="node/5">Par portālu</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% else %}
+
+<div class="mainmenu">
+  <div class="container">
+    <div class="col-md-3 slogo">
+     <div class="col-sm-12" role="heading">
+      <div class="region region-header">
+        <a class="logo navbar-btn pull-left" href="/en" title="Home" rel="home">
+          <img src="/themes/dati/logo.svg" alt="Home" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-2 visible-xs">
+    <div class="" data-toggle="collapse" data-target="#navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="material-icons" style="font-size: 48px;  color: #333333; text-align: right;">dehaze</span>
+    </div>
+  </div>
+  <div class="col-md-9 hidden-xs">
+    <header class="navbar navbar-custom container" id="navbar" role="banner">
+      <div class="navbar-header">
+        <div class="region region-navigation">
+          <nav role="navigation" aria-labelledby="block-dati-mainnavigation-menu" id="block-dati-mainnavigation">
+            <h2 class="sr-only" id="block-dati-mainnavigation-menu">Main navigation</h2>
+            <ul class="menu nav navbar-nav">
+              <li  class="active">
+                <a href="/dati/en/dataset" target="" rel="" class="fa fa-database">Data</a>
+              </li>
+              <li>
+                <a href="/en/node/17" target="" rel="" data-drupal-link-system-path="node/17"> Learn the skills of data</a>
+              </li>
+              <li>
+                <a href="/en/node/4" data-drupal-link-system-path="node/4">For publishers</a>
+              </li>
+              <li>
+                <a href="/en/buj" target="" rel="" data-drupal-link-system-path="buj">FAQ</a>
+              </li>
+              <li>
+                <a href="/en/aktualitates" target="" rel="" class="menu2" data-drupal-link-system-path="aktualitates">News</a>
+              </li>
+              <li>
+                <a href="/en/node/5" target="" rel="" class="menu2" data-drupal-link-system-path="node/5">About portal</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+</div>
+<div class="searchbar">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-8 col-xs-12">
+      <form action="/dati/en/dataset" method="get" accept-charset="UTF-8" class="data-search-form">
+        <div class="row">
+          <div class="col-sm-8 col-xs-8">
+            <div class="input-group">
+              <input name="q" type="text" class="form-control" placeholder="Enter search terms" aria-describedby="basic-addon1">
+              <span class="input-group-addon addon-blue" id="basic-addon1"><i class="material-icons">search</i></span>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-3">
+            <button type="submit" value="Meklēt" class="btn-transparent2">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-4 hidden-xs">
+      <div class="region region-menu2">
+        <nav role="navigation" aria-labelledby="block-galvenanavigacija-2-menu" id="block-galvenanavigacija-2">
+          <h2 class="sr-only" id="block-galvenanavigacija-2-menu">Galvenā navigācija</h2>
+          <ul class="menu nav navbar-nav">
+            <li  class="active">
+              <a href="/dati/en/dataset" target="" rel="" class="fa fa-database">Data</a>
+            </li>
+            <li>
+              <a href="/en/node/17" target="" rel="" data-drupal-link-system-path="node/17"> Learn the skills of data</a>
+            </li>
+            <li>
+              <a href="/en/node/4" data-drupal-link-system-path="node/4">For publishers</a>
+            </li>
+            <li>
+              <a href="/en/buj" target="" rel="" data-drupal-link-system-path="buj">FAQ</a>
+            </li>
+            <li>
+              <a href="/en/aktualitates" target="" rel="" class="menu2" data-drupal-link-system-path="aktualitates">News</a>
+            </li>
+            <li>
+              <a href="/en/node/5" target="" rel="" class="menu2" data-drupal-link-system-path="node/5">About portal</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endif %}
+
+{% block header_wrapper %}
+
+{% endblock %}

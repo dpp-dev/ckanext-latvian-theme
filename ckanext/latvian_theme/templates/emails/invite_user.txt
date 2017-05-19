@@ -1,0 +1,17 @@
+Sveicināti!
+
+Jūs esiet ielūgts pievienoties {{ site_title }}.
+
+Jums jau ir izveidots lietotājs - {{ user_name }}. Jūs to varēsiet nomainīt vēlāk.
+
+Jūs esiet pievienots organizācijai {{ group_title }} ar sekojošu tiesību lomu: {{ role_name }}.
+
+Lai apstiprinātu šo uzaicinājumu, lūdzu uzstādiet Jūsu lietotāja paroli izmantojot sekojošu saiti:
+
+   {{ reset_link }}
+
+
+Vēlot jauku dienu.
+
+--
+Ziņojums nosūtīts no {{ site_title }} ({{ site_url }})

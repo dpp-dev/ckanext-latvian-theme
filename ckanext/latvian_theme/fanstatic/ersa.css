@@ -1,0 +1,239 @@
+body {
+  background: #ffffff
+}
+
+.masthead .site-search {
+  margin: 2px 8px 2px 0;
+}
+
+.masthead .site-search input {
+  width: 200px;
+  padding: 4px 10px;
+}
+
+.masthead,
+.site-footer {
+  background: #666666;
+}
+
+.account-masthead {
+  background: #000000;
+}
+
+.hero {
+  background-image: url("/images/ersa-ckan-background.jpg");
+  padding: 20px 0;
+  min-height: 0
+}
+
+.hero>.container {
+  position: relative;
+  padding-bottom: 0
+}
+
+.hero .search-giant {
+  margin-bottom: 10px
+}
+
+.hero .search-giant input {
+  border-color: #003f52
+}
+
+.hero .page-heading {
+  font-size: 18px;
+  margin-bottom: 0
+}
+
+.hero .module-dark {
+  padding: 5px;
+  margin-bottom: 0;
+  color: #ffffff;
+  background: #ffffff
+}
+
+.hero .module-dark .module-content {
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+  background-color: #005d7a;
+  border-bottom: none
+}
+
+.hero .module-dark .module-content .heading {
+  margin-top: 0;
+  margin-bottom: 7px;
+  font-size: 24px;
+  line-height: 40px
+}
+
+.hero .tags {
+  *zoom: 1;
+  padding: 5px 10px 10px 10px;
+  background-color: #003647;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px
+}
+
+.hero .tags:before,
+.hero .tags:after {
+  display: table;
+  content: "";
+  line-height: 0
+}
+
+.hero .tags:after {
+  clear: both
+}
+
+.hero .tags h3,
+.hero .tags .tag {
+  display: block;
+  float: left;
+  margin: 5px 10px 0 0
+}
+
+.hero .tags h3 {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 2px 8px
+}
+
+.hero-primary,
+.hero-secondary {
+  float: left;
+  margin-left: 20px;
+  width: 460px
+}
+
+.hero-primary {
+  margin-left: 0;
+  margin-bottom: 0
+}
+
+.hero-secondary {
+  position: absolute;
+  bottom: 0;
+  right: 0
+}
+
+.hero-secondary .hero-secondary-inner {
+  bottom: 0;
+  left: 0;
+  right: 0
+}
+
+.main.homepage {
+  display: none;
+}
+
+.main.homepage .module-heading .media-image {
+  margin-right: 15px;
+  max-height: 53px;
+  -webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5)
+}
+
+.main.homepage .group-listing .box {
+  min-height: 275px
+}
+
+.main.homepage .group-list {
+  margin-bottom: 0
+}
+
+.main.homepage .group-list .dataset-content {
+  min-height: 70px
+}
+
+.main.homepage .box .module {
+  margin-top: 0
+}
+
+.hero .module-dark .module-content {
+  background-color: #ff9933;
+}
+
+.hero .tags {
+  background-color: #bdb8b3;
+}
+
+.control-full .select2-container {
+  width: 520px!important
+}
+
+.search-form .control-order-by {
+  float: right;
+  margin: 0 0 0 15px
+}
+
+.wrapper {
+  background: #ffffff url("../../../base/images/nav.png") 0 0 repeat-y;
+  margin-bottom: 20px;
+  margin-left: auto;
+}
+
+[role=main] .primary {
+  width: 717px;
+}
+
+[role=main] .secondary {
+  width: 220px;
+}
+
+.primary .tertiary {
+  margin-left: 20px;
+}
+
+.masthead .content {
+  position: absolute;
+  top: 10px;
+  right: 0
+}
+
+.site-footer .content {
+  position: absolute;
+  top: 10px;
+  right: 0
+}
+
+.footer-links,
+.attribution {
+  float: left;
+  margin-left: 20px;
+  width: 460px
+}
+
+.footer-links {
+  margin-left: 0
+}
+
+.footer-links ul {
+  float: left;
+  margin-left: 20px;
+  width: 220px
+}
+
+.footer-links ul:first-child {
+  margin-left: 0
+}
+
+.ie7 .module-heading .action {
+  position: absolute;
+  top: 9px;
+  right: 10px
+}
+
+.simple-input .field .btn-search {
+  *margin-right: .3em;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("../../../base/images/sprite-ckan-icons.png");
+  background-position: -51px -16px;
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  text-indent: -999em;
+}
