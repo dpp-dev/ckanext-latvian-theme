@@ -4,10 +4,10 @@ this.ckan.module('confirm-action', function (jQuery, _) {
     options: {
       /* Locale options can be overidden with data-module-i18n attribute */
       i18n: {
-        heading: _('Please Confirm Action'),
-        content: _('Are you sure you want to perform this action?'),
-        confirm: _('Confirm'),
-        cancel: _('Cancel')
+        heading: _('Lūdzu apstipriniet darbību'),
+        content: _('Vai jūs tiešām vēlaties veikt šo darbību?'),
+        confirm: _('Apstiprināt'),
+        cancel: _('Atcelt')
       },
       template: [
         '<div class="modal">',
