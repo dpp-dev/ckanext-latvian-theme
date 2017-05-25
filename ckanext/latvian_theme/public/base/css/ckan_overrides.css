@@ -137,7 +137,6 @@ select, input[type="text"], input[type="password"], input[type="datetime"], inpu
 .module-content .uneditable-input 
  {
     width:100%;
-    max-width:220px;
 }
 
 .input-append .add-on, .input-prepend .add-on {
