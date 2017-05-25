@@ -306,3 +306,7 @@ img {
 body {
   width: auto;
 }
+
+[role=main] {
+  flex: 1;
+}
