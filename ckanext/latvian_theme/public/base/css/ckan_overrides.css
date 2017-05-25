@@ -327,16 +327,18 @@ body {
 }
 
 [role=main] {
-  flex: 1;
+    flex: 0 1 auto;
 }
-
-
 
 .modal {
     display: flex;
     flex-direction: column;
 }
 
+.hide {
+  display: none;
+}
+
 .modal-body {
-  flex: 1;
+  flex: 0 1 auto;
 }
