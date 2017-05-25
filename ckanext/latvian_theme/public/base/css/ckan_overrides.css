@@ -117,10 +117,28 @@ a.tag:hover {
 
 select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
     height:30px;
+}
+
+.module-content select,
+.module-content input[type="text"],
+.module-content input[type="password"],
+.module-content input[type="datetime"],
+.module-content input[type="datetime-local"],
+.module-content input[type="date"],
+.module-content input[type="month"],
+.module-content input[type="time"],
+.module-content input[type="week"],
+.module-content input[type="number"],
+.module-content input[type="email"],
+.module-content input[type="url"],
+.module-content input[type="search"],
+.module-content input[type="tel"],
+.module-content input[type="color"],
+.module-content .uneditable-input 
+ {
     width:100%;
     max-width:220px;
 }
-
 
 .input-append .add-on, .input-prepend .add-on {
     height:30px;
