@@ -329,3 +329,14 @@ body {
 [role=main] {
   flex: 1;
 }
+
+
+
+.modal {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body {
+  flex: 1;
+}
