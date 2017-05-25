@@ -139,6 +139,26 @@ select, input[type="text"], input[type="password"], input[type="datetime"], inpu
     width:100%;
 }
 
+.editor select,
+.editor input[type="text"],
+.editor input[type="password"],
+.editor input[type="datetime"],
+.editor input[type="datetime-local"],
+.editor input[type="date"],
+.editor input[type="month"],
+.editor input[type="time"],
+.editor input[type="week"],
+.editor input[type="number"],
+.editor input[type="email"],
+.editor input[type="url"],
+.editor input[type="search"],
+.editor input[type="tel"],
+.editor input[type="color"],
+.editor .uneditable-input 
+ {
+    width:auto;
+}
+
 .input-append .add-on, .input-prepend .add-on {
     height:30px;
 }
@@ -327,7 +347,7 @@ body {
 }
 
 [role=main] {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
 }
 
 .modal {
