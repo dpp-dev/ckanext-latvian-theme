@@ -55,11 +55,27 @@ header.page-header {
 }
 .toolbar .breadcrumb > li + li:before {
     font-size: 20px;
-    content:'chevron_right';
-    font-family: 'Material icons';
+    content:'chevron_right' ;
+    top: 6px;
+    position:relative;
+    margin-top:-10px;
+    content:'keyboard_arrow_right';
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
     display: inline-block;
-    top: 5px;
-    position: relative;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    display: inline-block;
 }
 
 .toolbar .breadcrumb .material-icons {
