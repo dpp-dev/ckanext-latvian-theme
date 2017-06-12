@@ -17,9 +17,9 @@ Example:
 <form action="{{ action }}" method="post" class="form-horizontal">
   {{ form.errors(errors=error_summary) }}
 
-  {{ form.input('login', label=_("Username"), id='field-login', value="", error=username_error, classes=["control-medium"]) }}
+  {{ form.input('login', label=_("Username"), id='field-login', value="", error=username_error, classes=["control-medium"], attrs={'autocomplete': 'off'}) }}
 
-  {{ form.input('password', label=_("Password"), id='field-password', type="password", value="", error=password_error, classes=["control-medium"]) }}
+  {{ form.input('password', label=_("Password"), id='field-password', type="password", value="", error=password_error, classes=["control-medium"], attrs={'autocomplete': 'off'}) }}
 
   {{ form.checkbox('remember', label=_("Remember me"), id='field-remember', checked=true, value="63072000") }}
 
