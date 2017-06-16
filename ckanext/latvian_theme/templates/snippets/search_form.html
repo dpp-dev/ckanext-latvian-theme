@@ -81,12 +81,11 @@
   {% trans %}
     <p class="extra">Please try another search.</p>
   {% endtrans %}
-  {% trans %}
+  {% if current_lang == 'lv' %}
     <p class="extra">Vai arī <a href="/{{ current_lang }}/iesaki-datu-kopu">iesakiet jaunu datu kopu</a></p>
-  {% endtrans %}
-
-
-
+  {% else %}
+    <p class="extra">Or <a href="/{{ current_lang }}/iesaki-datu-kopu">suggest a new dataset</a></p>
+  {% endif %}
 {% endif %}
 
 {% if error %}
