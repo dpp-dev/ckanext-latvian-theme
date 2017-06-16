@@ -1,133 +1,14 @@
 {% set current_lang = request.environ.CKAN_LANG %}
 {% set current_url = request.environ.CKAN_CURRENT_URL %}
 
-
 {% if current_lang == 'lv' %}
-
-<div class="fwrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-1">
-        <div class="logo-footer"></div>
-      </div>
-      <div class="col-sm-11">
-        <footer class="footer container" role="contentinfo">
-          <div class="region region-footer">
-            <nav role="navigation" aria-labelledby="block-galvenanavigacija-menu" id="block-galvenanavigacija">
-              <h2 class="sr-only" id="block-galvenanavigacija-menu">Galvenā navigācija</h2>
-              <ul class="menu nav navbar-nav">
-               <li>
-                <a href="/dati/" target="" rel="" class="fa fa-database">Datu katalogs</a>
-              </li>
-              <li>
-                <a href="/lv/kas-ir-datu-kopa" target="" rel="" data-drupal-link-system-path="node/17">Apgūsti datu prasmes</a>
-              </li>
-              <li>
-                <a href="/lv/publicetajiem" data-drupal-link-system-path="node/4">Publicētājiem</a>
-              </li>
-              <li>
-                <a href="/lv/buj" target="" rel="" data-drupal-link-system-path="buj">Jautājumi un atbildes</a>
-              </li>
-              <li>
-                <a href="/lv/aktualitates" target="" rel="" class="menu2" data-drupal-link-system-path="aktualitates">Aktualitātes</a>
-              </li>
-              <li>
-                <a href="/lv/par-portalu" target="" rel="" class="menu2" data-drupal-link-system-path="node/5">Par portālu</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </footer>
-    </div>
-  </div>
-</div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8">
-        <div class="footer-copyright">
-          <div class="region region-footer-copy">
-            <section id="block-autortiesibuinformacija" class="block block-block-content block-block-content255de129-5625-4619-9609-d2065e967e1a clearfix">
-              <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>© 2017. Valsts Reģionālās attīstības aģentūra. Visas tiesības aizsargātas.<br />
-Par datu kataloga saturu atbildīgi datu publicētāji.</p>
-              </div>
-            </section>
-          </div>
-
-        </div>
-      </div>
-      <div class="col-sm-4 footer-social">
-        <div class="row">
-		<div class="col-md-5">&nbsp;&nbsp;</div>
-
-		<div class="col-md-7"><a href="mailto:dpp@vraa.gov.lv"><i class="fa fa-envelope-square">&nbsp;</i>dpp@vraa.gov.lv</a></div>
-		</div>
-      </div>
-    </div>
-  </div>
-
+{% include 'ckan_footer_lv.html' %}
   {% block footer_debug %}
     {% if g.debug %}
       {% include 'snippets/debug.html' %}
     {% endif %}
   {% endblock %}
-
    </div>
-
 {% else %}
-
-<div class="fwrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-1">
-        <div class="logo-footer"></div>
-      </div>
-      <div class="col-sm-11">
-        <footer class="footer container" role="contentinfo">
-          <div class="region region-footer">
-            <nav role="navigation" aria-labelledby="block-galvenanavigacija-menu" id="block-galvenanavigacija">
-              <h2 class="sr-only" id="block-galvenanavigacija-menu">Galvenā navigācija</h2>
-              <ul class="menu nav navbar-nav">
-                <li>
-                  <a href="/dati/en/dataset" target="" rel="" class="fa fa-database">Data</a>
-                </li>
-                <li>
-                  <a href="/en/node/4" data-drupal-link-system-path="node/4">For publishers</a>
-                </li>
-                <li>
-                  <a href="/en/aktualitates" target="" rel="" class="menu2" data-drupal-link-system-path="aktualitates">News</a>
-                </li>
-                <li>
-                  <a href="/en/node/5" target="" rel="" class="menu2" data-drupal-link-system-path="node/5">About portal</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </footer>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8">
-        <div class="footer-copyright">
-          <div class="region region-footer-copy">
-            <section id="block-autortiesibuinformacija" class="block block-block-content block-block-content255de129-5625-4619-9609-d2065e967e1a clearfix">
-              <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>© 2017. Valsts Reģionālās attīstības aģentūra. Visas tiesības aizsargātas.<br />
-Par datu kataloga saturu atbildīgi datu publicētāji.</p>
-              </div>
-            </section>
-          </div>
-
-        </div>
-      </div>
-      <div class="col-sm-4 footer-social">
-        <div class="row">
-		<div class="col-md-5">&nbsp;&nbsp;</div>
-
-		<div class="col-md-7"><a href="mailto:dpp@vraa.gov.lv"><i class="fa fa-envelope-square">&nbsp;</i>dpp@vraa.gov.lv</a></div>
-		</div>
-      </div>
-    </div>
-  </div>
-</div>
+{% include 'ckan_footer_lv.html' %}
 {% endif %}
