@@ -378,3 +378,7 @@ body {
 .modal-body {
   flex: 1 1 auto;
 }
+
+.form-inline .btn-primary {
+  margin-top: 15px;
+}
