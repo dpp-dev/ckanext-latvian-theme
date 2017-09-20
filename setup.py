@@ -81,6 +81,7 @@ setup(
     entry_points='''
         [ckan.plugins]
         latvian_theme=ckanext.latvian_theme.plugin:Latvian_ThemePlugin
+		latvian_ext=ckanext.latvian_theme.plugin:Latvian_AuthPlugin
 
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan
