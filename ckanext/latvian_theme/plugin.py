@@ -19,7 +19,7 @@ class Latvian_AuthPlugin(plugins.SingletonPlugin):
     def auth_user_list(self, context, data_dict):
         user = context["model"].User.get(context.get('user'))
         #ignore_auth is used in email sending code
-        if context.ignore_auth is True:
+        if context.get('ignore_auth') is True:
             return {'success': True}
         #sysadmin can see anything
         elif user.sysadmin:
