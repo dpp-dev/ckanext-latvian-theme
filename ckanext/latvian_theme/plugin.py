@@ -28,6 +28,17 @@ class Latvian_AuthPlugin(plugins.SingletonPlugin):
         else:
             return {'success': False}
 
+
+    def auth_user_show(self, context, data_dict):
+        user = context.get('user', '')
+        viewed_user = data_dict["id"]
+        if user == viewed_user:
+            return {'success': True}
+        else:
+            return self.auth_user_list(context, data_dict)
+
     #IAuthFunctions
     def get_auth_functions(self):
-        return {"user_list": self.auth_user_list}
+        return {"user_list": self.auth_user_list,
+                "user_show": self.auth_user_show
+               }
