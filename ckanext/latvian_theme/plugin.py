@@ -54,6 +54,7 @@ class CustomRevisionController(RevisionController):
 #    print(data_dict)
 #    return {'success': True}
 
+@toolkit.auth_allow_anonymous_access
 def auth_group_show(context, data_dict):
     if not context.get("for_view", False) and not context.get("api_version", False):
         #Not in a view and not through the API, likely to be internal code
