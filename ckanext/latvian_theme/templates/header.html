@@ -8,8 +8,8 @@
 
 <section class="language-switcher-language-url block block-language block-language-blocklanguage-interface clearfix" id="block-dati-languageswitcher" role="navigation">
 <ul class="links">
-  <li hreflang="en" data-drupal-link-system-path="&lt;front&gt;" class="en {% if current_lang == 'en' %}is-active{% endif %}">
-    <a href="{% url_for current_url, locale='en' %}" class="language-link {% if current_lang == 'en' %}is-active{% endif %}" hreflang="en" data-drupal-link-system-path="&lt;front&gt;">English</a>
+  <li hreflang="en" data-drupal-link-system-path="&lt;front&gt;" class="en {% if current_lang == 'eng' %}is-active{% endif %}">
+    <a href="{% url_for current_url, locale='eng' %}" class="language-link {% if current_lang == 'eng' %}is-active{% endif %}" hreflang="en" data-drupal-link-system-path="&lt;front&gt;">English</a>
   </li>
   <li hreflang="lv" data-drupal-link-system-path="&lt;front&gt;" class="lv {% if current_lang == 'lv' %}is-active{% endif %}">
     <a href="{% url_for current_url, locale='lv' %}" class="language-link {% if current_lang == 'lv' %}is-active{% endif %}" hreflang="lv" data-drupal-link-system-path="&lt;front&gt;">Latviešu</a>
@@ -21,13 +21,13 @@
     <div class="col-sm-2 accessibility hidden-xs">
       <div class="contrast">
         <i class="material-icons mi-left">brightness_6</i>
-       {% if current_lang == 'en' %} high contrast {% else %} augsts kontrasts {% endif %}
+       {% if current_lang == 'eng' %} high contrast {% else %} augsts kontrasts {% endif %}
       </div>
     </div>
     <div class="col-sm-2 accessibility  hidden-xs">
       <div class="textsize">
         <i class="material-icons text_smaller mi-left">remove_circle_outline</i>
-               {% if current_lang == 'en' %} text {% else %} teksts {% endif %}
+               {% if current_lang == 'eng' %} text {% else %} teksts {% endif %}
         <i class="material-icons text_larger  mi-right">add_circle_outline</i>
       </div>
     </div>
