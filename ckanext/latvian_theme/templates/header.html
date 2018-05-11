@@ -84,7 +84,7 @@
             <ul class="unstyled">
               {% block header_account_notlogged %}
               {% if h.check_access('user_create') %}
-              <li><a class="sub" href="/dati/{{current_lang}}/user/register"><i class="material-icons color-nice-blue">vpn_lock</i> {{ _('Register') }}</a></li>
+              <li><a class="sub" href="/{{current_lang}}/reg"><i class="material-icons color-nice-blue">vpn_lock</i> {{ _('Register') }}</a></li>
               {% endif %}
               <li><a href="/dati/{{current_lang}}/user/login"> <i class="material-icons color-nice-blue">vpn_key</i> {{ _('Log in') }}</a></li>
               {% endblock %}
